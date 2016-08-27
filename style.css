@@ -1,0 +1,65 @@
+body  { font-family: Verdana; }
+.wrap { display: block; margin: 0 auto 0 auto; width: 400px; }
+
+/* 
+* generic `pane` item 
+*/
+.pane {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+  width: 150px;
+  height: 150px;
+}
+.pane img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(0px) opacity(100%);
+
+}
+.pane span {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  line-height: 150px;
+}
+
+/*
+* specific `hoverable` item 
+*/
+.hoverable img {
+  /* 
+  * set transition speed 
+  */
+  transition: -webkit-filter 0.35s ease-in-out;
+}
+
+.hoverable span {
+  /*
+  * hide the copy 
+  */
+  font-size: 0;
+  /* 
+  * set transition speed
+  */
+  transition: font-size 0.35s ease-in-out;
+}
+
+.hoverable:hover img {
+  /* 
+  * set the background 
+  * image on hover 
+  */
+  -webkit-filter: blur(3px) opacity(80%);
+}
+
+.hoverable:hover span {
+  /* 
+  * show the copy by setting 
+  * the font-size on hover
+  */
+  font-size: 25px;
+}
